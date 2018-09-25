@@ -1,4 +1,7 @@
-const PORT = 8080;
+let PORT = process.env.PORT;
+if (PORT == null || PORT == "") {
+  PORT = 8080;
+}
 
 const express = require('express');
 const app = express();
@@ -10,25 +13,23 @@ const io = require('socket.io')(server);
 
 const messageHistory = [];
 
-// Server the files in the client folder
+// Serve the files in the client folder
 app.use(express.static('client'));
 
 io.on('connection', function(socket) {
 	const messageHistoryLength = messageHistory.length;
 	
-	if(messageHistoryLength > 1) {
-		console.log(`length ${messageHistoryLength}`);
-		
+	// If there's past messages, display them
+	if(messageHistoryLength > 1) {	
 		for (let i = 0; i < messageHistoryLength; i++) {
-			console.log(`message ${messageHistory[i]}`);
 			io.emit('messageInfo', messageHistory[i]);
 		}
 	}
 	
+	// Listen for new mesages
 	socket.on('messageInfo', function(info) {
-		messageHistory.push(info);
+		messageHistory.push(info); // Add message to array
 		io.emit('messageInfo', info);
-		console.log(messageHistory.length)
 	});
 });
 

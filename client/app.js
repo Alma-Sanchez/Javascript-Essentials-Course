@@ -13,12 +13,6 @@
 	})
 	
 	socket.on('messageInfo', function(msg) {
-		console.log(`msg from app: ${msg}`);
-		if (msg.length > 1) {
-			for (item in msg){
-				console.log(item)
-			}
-		}
 		let listElement = $('<li>');
 		let usernameSpan = document.createElement("div");
 		usernameSpan.innerHTML = msg.username;
@@ -29,8 +23,6 @@
 		messageSpan.className = "display_message";
 		
 		listElement.append(usernameSpan, messageSpan);
-		
-		console.log(listElement)
 		
 		listElement.appendTo('#history');
 	})
