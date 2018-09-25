@@ -1,0 +1,102 @@
+/* ---- HTML Tags ---- */
+body{
+	margin: 20px;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-size: 15px;
+	background-color: #ffffff;
+	color: #303030;
+}
+
+main {
+	min-width: 600px;
+	width: 60%;
+	min-height: 200px;
+	padding: 15px;
+	margin: 0 auto;
+	background: #f0f0f0;
+	border-radius: 2px;
+	box-shadow: 3px 3px 12px #c8c8c8;
+}
+
+section {
+	max-width: 85%;
+	margin: 0 auto;
+	padding: 18px;
+
+}
+ol {
+	list-style: none;
+	margin-bottom: 20px;
+	margin-top: 0;
+	padding: 0;    
+}
+
+li {
+	padding: 10px;
+}
+
+li:nth-child(odd) {
+	background-color: #e3e3e3;
+	border-radius: 6px;
+}
+
+input {
+	border: none;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+button {
+	width: 19%;
+	height: 36px;
+	padding: 5px 10px;
+	margin: 0;
+	border-radius: 6px;
+	background-color: #6ad4d4;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+/* ---- Classes ---- */
+.message_history {
+	min-height: 200px;
+	background-color: #ffffff;
+	border-radius: 10px 10px 0 0;
+}
+
+.new_message_area { 
+    background-color: #d2c59f66;;
+    border-radius: 0 0 10px 10px;
+}
+
+.display_initials {
+	color: purple;
+	width: 25px;
+	float: left;
+	margin-right: 15px;
+}
+
+.display_message {
+	
+}
+
+/* ---- IDs ---- */
+#initials {
+	width: 10%;
+}
+#message {
+	width: 60%;
+}
+
+@media only screen and (min-width: 1076px) {
+		#message {
+			width: 61.7%;
+		}
+}
+
+@media only screen and (min-width: 1310px) {
+		#message {
+			width: 63.5%;
+		}
+}
